@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Video Downloader",
+    "version": "1.0",
+    "description": "Extract video links, enable right-click, and create a downloadable link.",
+    "permissions": ["contextMenus", "activeTab", "downloads", "scripting"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    }
+  }
+  
